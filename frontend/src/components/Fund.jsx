@@ -1,8 +1,11 @@
 import React from 'react'
+import Sidebar from './Sidebar'
 
 const Fund = () => {
   return (
-    <div>Fund</div>
+    <div>
+      <Sidebar/>
+    </div>
   )
 }
 

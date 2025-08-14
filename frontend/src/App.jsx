@@ -13,6 +13,8 @@ import Fund from './components/Fund'
 import Numbers from './components/Numbers'
 import Buy from './components/Buy'
 import Footer from './components/Footer'
+import Forgotpass from './pages/Forgotpass'
+import ResetPassword from './pages/ResetPassword'
 
 
 
@@ -65,10 +67,12 @@ const App = () => {
           <Route path='/Numbers' element={<Numbers/>}/>
           <Route path='/buy' element={<Buy/>}/>
           <Route path='/howtobuy' element={<Howtobuy/>}/>
-
+          <Route path='/forgot-password' element={<Forgotpass setUser={setUser} />} />
           <Route path='*' element={<NotFound />} />
+          <Route path='/resetpassword' element={<ResetPassword />} />
       </Routes>
-      <Footer user={user} setUser={setUser}/>
+      <Footer />
+
     </Router>
     </>
   )

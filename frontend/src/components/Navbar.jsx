@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 // import { FaBars } from 'react-icons/fa';
 import logo from '../assets/dclogo.png'
+import SocialMediaDropdown from './SocialMediaDropdown';
 
 
 const Navbar = ({ user, setUser }) => {
@@ -15,9 +16,17 @@ const Navbar = ({ user, setUser }) => {
     return (
         <nav className='bg-white mx-auto fixed top-0 left-0 w-full z-50 shadow-md '>
             <div className=' border-b-2 bo p-3 flex  justify-between items-center w-full'>
-                <Link to='/' className='text-gray-400 text-lg font-bold'>
-                    <img src={logo} alt="Logo" className='w-30 h-8 ml-2' />
-                </Link>
+                <div>
+                    {!user ? (
+                        <Link to='/' className='text-gray-400 text-lg font-bold'>
+                            <img src={logo} alt="Logo" className='w-30 h-8 ml-2' />
+                        </Link>
+                    ):(
+                            <Link to='/dashboard' className='text-gray-400 text-lg font-bold'>
+                                <img src={logo} alt="Logo" className='w-30 h-8 ml-2' />
+                            </Link>
+                    )}
+                </div>
 
 
                 <div>
@@ -44,25 +53,11 @@ const Navbar = ({ user, setUser }) => {
 
                             <div className='flex items-center gap-4 w-full'>
 
-                                <div className="mr-auto">
-                                        <select name="Category" id="" className="border rounded-1 p-2 outline-none bg-black text-white
-                                        px-3 hover:bg-white hover:text-zinc-950">
-                                        <option value="">Select Social Media</option>
-                                        <option value="facebook">Facebook</option>
-                                        <option value="instagram">Instagram</option>
-                                        <option value="twitter">Twitter / X</option>
-                                        <option value="tiktok">TikTok</option>
-                                        <option value="snapchat">Snapchat</option>
-                                        <option value="linkedin">LinkedIn</option>
-                                        <option value="youtube">YouTube</option>
-                                        <option value="whatsapp">WhatsApp</option>
-                                        <option value="telegram">Telegram</option>
-                                        <option value="reddit">Reddit</option>
-                                    </select>
-                                </div>
-                                <div>
+                                <SocialMediaDropdown />
+                                <span>
                                     <input type="text" placeholder="Search..." className="border p-2 rounded-3xl outline-none " />
-                                </div>
+
+                                </span>
 
 
                             </div>

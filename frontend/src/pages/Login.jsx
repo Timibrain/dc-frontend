@@ -10,15 +10,15 @@ const Login = ({ setUser }) => {
     const [error, setError] = useState('')
     const navigate = useNavigate();
 
-    const handleChange = (e) =>{
-        setFormData({...formData, [e.target.name]: e.target.value})
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
     };
 
-    const handleSubmit = async (e) =>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('/api/users/login', formData);
-            localStorage.setItem("token",res.data.token);
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/user/login`, formData);
+            localStorage.setItem("token", res.data.token);
             console.log(res.data);
             setUser(res.data);
             navigate('/');
@@ -26,7 +26,7 @@ const Login = ({ setUser }) => {
             setError(error.response?.data?.message || "Login failed")
         }
     }
-    
+
     return (
 
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -36,7 +36,7 @@ const Login = ({ setUser }) => {
                 <form action="" className='' onSubmit={handleSubmit}>
                     <div className='mb-4'>
                         <label htmlFor="" className='block text-gray-600 text-sm font-medium mb-1'>
-                        Email
+                            Email
                         </label>
                         <input type="email" required name='email' value={formData.email} onChange={handleChange} autoComplete='off' placeholder='Enter your email' className='w-full p-3 border border-gray-300 rounded-md focus:ring-2  focus:ring-blue-200 outline-none focus:border-blue-400' />
                     </div>
@@ -48,8 +48,13 @@ const Login = ({ setUser }) => {
                         <input type="password" name='password' value={formData.password} onChange={handleChange} autoComplete='off' required placeholder='Enter your password' className='w-full p-3 border border-gray-300 rounded-md focus:ring-2  focus:ring-blue-200 outline-none focus:border-blue-400' />
                     </div>
                     <button className='w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 font-medium cursor-pointer'>
-                        Login 
+                        Login
                     </button>
+                    <div className="mt-4 text-center">
+                        <a href="/forgot-password" className="text-blue-500 hover:underline text-sm">
+                            Forgot Password?
+                        </a>
+                    </div>
                 </form>
             </div>
 

@@ -3,14 +3,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
 import { FaWallet, FaMoneyCheckAlt, FaShoppingCart, FaTicketAlt } from 'react-icons/fa';
+import people from '../assets/people.jpg'
+import social from '../assets/Social.jpg'
+import woman from '../assets/woman.jpg'
 
 
 
 const images = [
-    'https://source.unsplash.com/random/800x400?sig=11',
-    'https://source.unsplash.com/random/800x400?sig=12',
-    'https://source.unsplash.com/random/800x400?sig=13',
-    'https://source.unsplash.com/random/800x400?sig=14',
+    people,
+    social,
+    woman
 ]
 
 const Dashboard = ({ user, error }) => {

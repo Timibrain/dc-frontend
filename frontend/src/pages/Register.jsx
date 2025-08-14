@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Register = ({ setUser }) => {
     const [formData, setFormData] = useState({
-        username: "",
+        fullname: "",
         email: "",
         password: "",
     });
@@ -18,7 +18,7 @@ const Register = ({ setUser }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('/api/users/register', formData);
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/user/signup`, formData);
             localStorage.setItem("token", res.data.token);
             console.log(res.data);
             setUser(res.data);
@@ -37,20 +37,20 @@ const Register = ({ setUser }) => {
                 <form action="" className='' onSubmit={handleSubmit}>
                     <div className='mb-4'>
                         <label htmlFor="" className='block text-gray-600 text-sm font-medium mb-1'>
-                            Username
+                            fullname
                         </label>
-                        <input type="text" required name='username' value={formData.username} onChange={handleChange} autoComplete='off' placeholder='Enter your username' className='w-full p-3 border border-gray-300 rounded-md focus:ring-2  focus:ring-blue-200 outline-none focus:border-blue-400' />
+                        <input type="text" required name='fullname' value={formData.fullname} onChange={handleChange} autoComplete='off' placeholder='Enter your fullname' className='w-full p-3 border border-gray-300 rounded-md focus:ring-2  focus:ring-blue-200 outline-none focus:border-blue-400' />
                     </div>
                     <div className='mb-4'>
                         <label htmlFor="" className='block text-gray-600 text-sm font-medium mb-1'>
-                            Email
+                            email
                         </label>
                         <input type="email" required name='email' value={formData.email} onChange={handleChange} autoComplete='off' placeholder='Enter your email' className='w-full p-3 border border-gray-300 rounded-md focus:ring-2  focus:ring-blue-200 outline-none focus:border-blue-400' />
                     </div>
 
                     <div className='mb-6'>
                         <label htmlFor="" className='block text-gray-600 text-sm font-medium mb-1'>
-                            Password
+                            password
                         </label>
                         <input type="password" name='password' value={formData.password} onChange={handleChange} autoComplete='off' required placeholder='Enter your password' className='w-full p-3 border border-gray-300 rounded-md focus:ring-2  focus:ring-blue-200 outline-none focus:border-blue-400' />
                     </div>
