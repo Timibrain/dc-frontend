@@ -17,15 +17,9 @@ const Navbar = ({ user, setUser }) => {
         <nav className='bg-white mx-auto fixed top-0 left-0 w-full z-50 shadow-md '>
             <div className=' border-b-2 bo p-3 flex  justify-between items-center w-full'>
                 <div>
-                    {!user ? (
-                        <Link to='/' className='text-gray-400 text-lg font-bold'>
-                            <img src={logo} alt="Logo" className='w-30 h-8 ml-2' />
-                        </Link>
-                    ):(
-                            <Link to='/dashboard' className='text-gray-400 text-lg font-bold'>
-                                <img src={logo} alt="Logo" className='w-30 h-8 ml-2' />
-                            </Link>
-                    )}
+                    <Link to='/' className='text-gray-400 text-lg font-bold'>
+                        <img src={logo} alt="Logo" className='w-30 h-8 ml-2' />
+                    </Link>
                 </div>
 
 

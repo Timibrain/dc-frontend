@@ -7,14 +7,22 @@ import people from '../assets/people.jpg'
 import social from '../assets/Social.jpg'
 import woman from '../assets/woman.jpg'
 import laptop from '../assets/laptop.jpg'
-
-
 import { FaClipboardList, FaLock, FaExchangeAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom'
 
 
 
 
 const Userhome = ({user, setUser}) => {
+    const navigate = useNavigate();
+
+    const handleLog = () => {
+        if(!user) {
+            navigate('/login');
+        } else {
+            navigate('/dashboard');
+        }
+    }
     return (
         <>
             <div className=''>
@@ -35,7 +43,7 @@ const Userhome = ({user, setUser}) => {
                         }} />
                     </div>
                     <div className='  lg:mx-50 lg:text-sm'>
-                        <p className=''>Rocky Socials is a secure marketplace where you can buy and sell verified social media accounts with confidence.</p>
+                        <p className=''>Buy and sell verified social media accounts safely with DC Store — your trusted marketplace.</p>
                     </div>
                     <div className='pt-5'> <p className=' lg:mx-50 text-sm mx-1'>Instagram
                         | Tiktok
@@ -46,8 +54,8 @@ const Userhome = ({user, setUser}) => {
                         |⁠Other Socials</p>
                     </div>
                     <div className='  text-sm space-x-2 mt-6'>
-                        <button className='border text-white rounded-xl px-9 py-4 bg-black '>Explore Us</button>
-                        <button className='border text-black rounded-xl px-9 py-4 hover:bg-black hover:text-white p-3 bg-gray-300 '>Login</button>
+                        <button className='border text-white rounded-xl px-9 py-4 bg-black '>Dive In</button>
+                        <button onClick={handleLog} className='border text-black rounded-xl px-9 py-4 hover:bg-black hover:text-white p-3 bg-gray-300 '>Login</button>
                     </div>
                 </div>
             </div>
@@ -56,9 +64,9 @@ const Userhome = ({user, setUser}) => {
                     <div>
                     <img className='rounded-2xl' src={people} alt="" />
                         <p className=' flex justify-center text-2xl mt-2 '>-----About Us -----</p>
-                        <h2 className=' text-gray-900 text-5xl mt-5'> Your Trusted Partner in Social Media Account Trading</h2>
-                        <p className='mt-4 text-sm'>At Rocky Socials, we've revolutionized the way digital entrepreneurs acquire and sell established social media accounts. As a leading marketplace in the social media asset space, we connect serious buyers with verified sellers through a secure, transparent platform.</p>
-                        <p className='mt-5 text-sm'>Join the thousands of satisfied clients who have chosen Rocky Socials as their preferred platform for social media account trading. Your digital future starts here.</p>
+                        <h2 className=' text-gray-900 text-5xl mt-5'>Empowering Secure Social Media Account Trades with Trust</h2>
+                        <p className='mt-4 text-sm'>DC Store has redefined the marketplace for digital entrepreneurs to acquire and sell established social media accounts. As a leading platform in the social media asset space, we bring together verified sellers and committed buyers in a safe, transparent environment.</p>
+                        <p className='mt-5 text-sm'>Become part of the thousands who have made Rocky Socials their preferred choice for social media account trading. Your digital journey begins here.</p>
                     </div>
                 </div>
                 <div className='flex space-x-4 mt-4' >
@@ -78,18 +86,18 @@ const Userhome = ({user, setUser}) => {
                 <div className='text-center'>
                     <p>------ How To Buy Social Media Accounts ------</p>
                     <h2 className='text-5xl text-gray-900 '>Simple, Secure, and Straightforward</h2>
-                    <p>Our streamlined process ensures a safe and efficient account purchase experience. Follow these three simple steps to acquire your desired social media account.</p>
+                    <p>We’ve simplified the process to provide you with a safe and efficient way to buy social media accounts. Simply complete these three straightforward steps to find your perfect account.</p>
                 </div>
                 <div className='lg:flex mt-5  justify-center text-center '>
                     <div className='rounded-xl mx-3  h-50 sm:w-full mt-4 pt-10 bg-indigo-300'>
                         <FaClipboardList className='flex justify-center mx-auto text-4xl text-indigo-800' />
                         <h5 className='text-2xl'>Choose Your Account</h5>
-                        <p>Browse our verified listings and select an account that matches your requirements. Each listing includes detailed metrics and audience insights.</p>
+                        <p>Browse through our verified accounts and pick the one that suits your goals. Each listing comes with comprehensive metrics and audience data.</p>
                     </div>
                     <div className='rounded-xl mx-3 h-50 sm:w-full mt-4 pt-10 bg-gray-400'>
                         <FaLock className='flex justify-center mx-auto text-4xl text-gray-800' />
                         <h5 className='text-2xl'>Secure Payment</h5>
-                        <p>Make your payment through our protected escrow system, ensuring your funds are safe until the transfer is complete.</p>
+                        <p>Complete your payment via our secure escrow system, keeping your funds protected until the transfer is finalized.</p>
                     </div>
                     <div className='rounded-xl mx-3 h-50 sm:w-full mt-4 pt-10 bg-violet-300'>
                         <FaExchangeAlt className='flex justify-center mx-auto text-4xl text-violet-800' />
@@ -100,27 +108,27 @@ const Userhome = ({user, setUser}) => {
             </section>
             <div className='lg:flex justify-center text-center lg:px-40 text-2xl lg:text-3xl text-white bg-gray-900 lg:space-x-10 py-10'>
                 <div className='pt-10'>
-                    <h1 className='text-4xl text-bold'>12</h1>
+                    <h1 className='text-4xl text-bold'>10</h1>
                     <p>Team members</p>
                </div> 
                <div className='pt-10'>
-                    <h1 className='text-4xl text-bold'>5M+</h1>
+                    <h1 className='text-4xl text-bold'>6M+</h1>
                     <p>In Transaction Value</p>
                </div>
                 <div className='pt-10'>
-                    <h1 className='text-4xl text-bold'>360+</h1>
+                    <h1 className='text-4xl text-bold'>350+</h1>
                     <p>Customers Attended To</p>
                </div>
                 <div className='pt-10'>
-                    <h1 className='text-4xl text-bold'>500+</h1>
+                    <h1 className='text-4xl text-bold'>600+</h1>
                     <p> Accounts Sold</p>
                </div>
             </div>
             <section className='text-center mt-10 mx-10 lg:px-40'>
                 <div>
                     <p> ---- Our Features -----</p>
-                    <h5 className='text-2xl'>Rocky Social Offer Premium Services</h5>
-                    <p className='text-sm'>What sets us apart is our unwavering commitment to security and authenticity. Every account listed undergoes rigorous verification, ensuring that buyers receive exactly what they're investing in. Our escrow service protects both parties during transactions, while our dedicated support team provides round-the-clock assistance to ensure smooth transfers.</p> 
+                    <h5 className='text-2xl'>Dc store Offer Premium Services</h5>
+                    <p className='text-sm'>What distinguishes us is our steadfast dedication to security and authenticity. Each account listed is thoroughly verified, guaranteeing buyers get exactly what they pay for. Our escrow service safeguards both buyers and sellers throughout the transaction, and our committed support team is available 24/7 to ensure seamless transfers.</p> 
                 </div>
             </section>
             <section className="text-center mt-10 bg-gray-300 lg:px-40 py-10">

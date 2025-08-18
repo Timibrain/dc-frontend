@@ -46,8 +46,9 @@ const App = () => {
 
   if (Isloading) {
     return (
-      <div className='min-h-screen bg-gray-900 flex items-center justify-center'>
-        <div className='text-x1 text-white'>Loading....</div>
+      <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center gap-4">
+        <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+        <p className="text-white text-xl">Loading...</p>
       </div>
     );
   }
@@ -58,7 +59,7 @@ const App = () => {
         <Navbar user={user} setUser={setUser} />
       <Routes>
         <Route path='/' element={<Userhome user={user} error={error} />} />
-          <Route path='/login' element={user ? <Navigate to='/dashboard' /> : <Login setUser={setUser} />}/>
+          <Route path='/login' element={user ? <Navigate to='/dashboard' /> : <Login setIsloading={setIsloading} setUser={setUser} />}/>
           <Route path='/register' element={user ? <Navigate to='/dashboard' /> : <Register setUser={setUser} />}/>
           <Route path='/home' element={<Dashboard/>} />
           <Route path='/dashboard' element={<Dashboard/>}/>

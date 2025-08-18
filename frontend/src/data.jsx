@@ -1,7 +1,7 @@
 import {
   FaHome,
   FaTachometerAlt,
-  FaInfoCircle,
+  // FaInfoCircle,
   FaFileAlt,
   FaPhoneAlt,
   FaShoppingCart,
@@ -9,11 +9,11 @@ import {
 } from 'react-icons/fa';
 
 export const menuItems = [
-  { icon: <FaHome />, text: "Home", to: "/home" },
+  { icon: <FaHome />, text: "Profile"},
   { icon: <FaTachometerAlt />, text: "Dashboard", to: "/dashboard" },
-  { icon: <FaInfoCircle />, text: "About", to: "/about" },
-  { icon: <FaFileAlt />, text: "Buy Logs", to: "/howtobuy" },
-  { icon: <FaPhoneAlt />, text: "Numbers", to: "/numbers" },
+  // { icon: <FaInfoCircle />, text: "About", to: "/about" },
+  { icon: <FaFileAlt />, text: "Purchased Account", to: "/howtobuy" },
+  { icon: <FaPhoneAlt />, text: "Change Password", to: "/numbers" },
   { icon: <FaShoppingCart />, text: "Buy", to: "/buy" },
   { icon: <FaMoneyBillWave />, text: "Fund", to: "/fund" },
 ];
