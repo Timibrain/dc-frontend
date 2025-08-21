@@ -46,7 +46,7 @@ const Fund = () => {
       </div>
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center  py-12">
       {/* Carousel */}
-      <div className=' px-1  w-full bg-gray-300 text-center font-bold h-100 flex justify-center items-center'>
+      <div className=' px-1  w-full bg-white text-center font-bold h-100 flex justify-center items-center'>
         <div className="w-full flex justify-center mt-30 px-2">
           <div className="relative w-full max-w-3xl h-[220px] overflow-hidden rounded-lg shadow-lg">
             <AnimatePresence initial={false}>

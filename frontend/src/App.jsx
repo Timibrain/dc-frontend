@@ -15,6 +15,8 @@ import Buy from './components/Buy'
 import Footer from './components/Footer'
 import Forgotpass from './pages/Forgotpass'
 import ResetPassword from './pages/ResetPassword'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -73,7 +75,7 @@ const App = () => {
           <Route path='/resetpassword' element={<ResetPassword />} />
       </Routes>
       <Footer />
-
+        <ToastContainer position="bottom-left" autoClose={3000} />
     </Router>
     </>
   )

@@ -30,7 +30,7 @@ const Userhome = ({user, setUser}) => {
                
 
             </div>
-            <div className=' px-10  w-full bg-gray-300 text-center font-bold h-150 flex justify-center items-center'>
+            <div className=' px-10  w-full bg-white text-center font-bold h-150 flex justify-center items-center'>
                 <div>
                     <div className=' lg:mx-50 text-3xl '>
                         {/* <h1 className=' '>Buy Social Media Accounts At Affordable Rates</h1> */}
